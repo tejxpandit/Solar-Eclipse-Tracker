@@ -9,9 +9,6 @@ from time import sleep
 
 URL = "http://" + "192.168.0.105" + ":8080/stream.mjpeg"
 
-# Model
-# model = torch.hub.load('ultralytics/yolov5', 'yolov5m')  # Default Device GPU
-#model = torch.hub.load('ultralytics/yolov5', 'yolov5m', device="cpu") # Run with CPU
 
 key = cv2. waitKey(1)
 webcam = cv2.VideoCapture(URL)
@@ -25,7 +22,30 @@ while True:
         check, frame = webcam.read()
         cv2.imshow("Capturing", frame)
  
+        if(frame_number > 1):
+            img = cv2.resize(frame,(640,480))
+            #cv2.imshow("Img", img)
+
+            img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+            # results = model(img_rgb)
+
+            
+            cv2.imshow("YOLO", img)
+            #print(results)
+
+            
+            frame_number = 0
+        else:
+            frame_number += 1
+
         
+        #results.show()
+
+        key = cv2.waitKey(1)
+        if key == ord('q'):
+            webcam.release()
+            cv2.destroyAllWindows()
+            break
     
     except(KeyboardInterrupt):
         print("Turning off camera.")
