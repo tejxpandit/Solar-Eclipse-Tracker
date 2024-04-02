@@ -17,3 +17,17 @@ key = cv2. waitKey(1)
 webcam = cv2.VideoCapture(URL)
 #webcam = cv2.VideoCapture(0)
 sleep(2)
+
+frame_number = 0
+while True:
+
+    try:
+        check, frame = webcam.read()
+        cv2.imshow("Capturing", frame)
+ 
+        
+    
+    except(KeyboardInterrupt):
+        print("Turning off camera.")
+        
+
