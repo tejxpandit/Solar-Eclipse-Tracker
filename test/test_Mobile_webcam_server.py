@@ -29,5 +29,9 @@ while True:
     
     except(KeyboardInterrupt):
         print("Turning off camera.")
-        
+        webcam.release()
+        print("Camera off.")
+        print("Program ended.")
+        cv2.destroyAllWindows()
+        break
 
