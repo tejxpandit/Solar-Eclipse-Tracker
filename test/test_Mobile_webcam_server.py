@@ -9,6 +9,9 @@ from time import sleep
 
 URL = "http://" + "192.168.0.105" + ":8080/stream.mjpeg"
 
+# Model
+# model = torch.hub.load('ultralytics/yolov5', 'yolov5m')  # Default Device GPU
+#model = torch.hub.load('ultralytics/yolov5', 'yolov5m', device="cpu") # Run with CPU
 
 key = cv2. waitKey(1)
 webcam = cv2.VideoCapture(URL)
@@ -29,11 +32,23 @@ while True:
             img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
             # results = model(img_rgb)
 
-            
+            # for box in results.xyxy[0]:
+            #     #print(box[5])
+            #     if box[4]>0.5:
+            #         xB = int(box[2])
+            #         xA = int(box[0])
+            #         yB = int(box[3])
+            #         yA = int(box[1])
+            #         cv2.rectangle(img, (xA, yA), (xB, yB), (0, 255, 0), 2)
+                
+
             cv2.imshow("YOLO", img)
             #print(results)
 
-            
+            # results = results.pandas().xyxy[0]
+            # for obj in range(len(results.index)):
+            #     print(results.loc[obj].at["name"])
+
             frame_number = 0
         else:
             frame_number += 1
