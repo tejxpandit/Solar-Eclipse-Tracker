@@ -13,3 +13,13 @@ from MobileBTController import MobileBTController
 dpg.create_context()
 dpg.configure_app(init_file="solartracker.ini")
 
+# DPG Viewport
+dpg.create_viewport(title="Solar Eclipse Tracker", width=1100, height=650, small_icon="SolarEclipse.ico", large_icon="SolarEclipse.ico")
+dpg.set_exit_callback(lambda: dpg.save_init_file("solartracker.ini"))
+
+
+# DPG Render Context
+dpg.setup_dearpygui()
+dpg.show_viewport()
+dpg.start_dearpygui()
+dpg.destroy_context()
