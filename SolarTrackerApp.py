@@ -17,6 +17,8 @@ dpg.configure_app(init_file="solartracker.ini")
 dpg.create_viewport(title="Solar Eclipse Tracker", width=1100, height=650, small_icon="SolarEclipse.ico", large_icon="SolarEclipse.ico")
 dpg.set_exit_callback(lambda: dpg.save_init_file("solartracker.ini"))
 
+# Solar Tracker
+tracker = SolarTracker()
 
 # DPG Render Context
 dpg.setup_dearpygui()
