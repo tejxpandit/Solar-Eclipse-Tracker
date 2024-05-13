@@ -20,6 +20,15 @@ dpg.set_exit_callback(lambda: dpg.save_init_file("solartracker.ini"))
 # Solar Tracker
 tracker = SolarTracker()
 
+# Dynamixel Turret
+dmx = DynamixelTurret()
+
+# Turret Controller
+turret = TurretController()
+turret.dmx = dmx
+turret.tracker = tracker
+turret.createTurretControllerWindow()
+
 # DPG Render Context
 dpg.setup_dearpygui()
 dpg.show_viewport()
