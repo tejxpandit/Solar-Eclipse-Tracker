@@ -29,6 +29,12 @@ turret.dmx = dmx
 turret.tracker = tracker
 turret.createTurretControllerWindow()
 
+# Stream Viewer
+stream = StreamViewer()
+stream.createStreamViewWindow()
+stream.initializeStreamTexture()
+stream.initializeStreamFrame()
+
 # DPG Render Context
 dpg.setup_dearpygui()
 dpg.show_viewport()
