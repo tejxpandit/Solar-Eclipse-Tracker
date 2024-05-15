@@ -35,6 +35,10 @@ stream.createStreamViewWindow()
 stream.initializeStreamTexture()
 stream.initializeStreamFrame()
 
+# Mobile Bluetooth Controller
+btcon = MobileBTController()
+btcon.createBTControllerWindow()
+
 # DPG Render Context
 dpg.setup_dearpygui()
 dpg.show_viewport()
