@@ -13,3 +13,9 @@ class SolarTracker:
         self.date_time = None
         self.day_routine = None
 
+    # TEST : GENERATE SOLAR ECLIPSE ROUTINE
+    def generateDayRoutine(self):
+        self.day_routine = []
+        for h in range(8, 18, 1): # hours
+            for m in range(0, 60, 10): # minutes
+                self.day_routine.append(datetime(2024, 4, 4, h, m, 0, 0, tzinfo=ZoneInfo("America/Chicago")))
