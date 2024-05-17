@@ -17,6 +17,10 @@ class SolarTracker:
         self.date_time = datetime.now(tz=ZoneInfo("America/Chicago"))
         # self.date_time = datetime(2024, 4, 4, 18, 0, 0, 0, tzinfo=ZoneInfo("America/Chicago"))
 
+    def getAltitude(self):
+        # self.setDateTime()
+        self.altitude = sol.get_altitude(self.latitude, self.longitude, self.date_time)
+        return self.altitude
 
     # TEST : GENERATE SOLAR ECLIPSE ROUTINE
     def generateDayRoutine(self):
