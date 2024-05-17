@@ -21,6 +21,11 @@ class SolarTracker:
         # self.setDateTime()
         self.altitude = sol.get_altitude(self.latitude, self.longitude, self.date_time)
         return self.altitude
+    
+    def getAzimuth(self):
+        # self.setDateTime()
+        self.azimuth = sol.get_azimuth(self.latitude, self.longitude, self.date_time)
+        return self.azimuth
 
     # TEST : GENERATE SOLAR ECLIPSE ROUTINE
     def generateDayRoutine(self):
