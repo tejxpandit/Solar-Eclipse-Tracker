@@ -34,4 +34,7 @@ class SolarTracker:
             for m in range(0, 60, 10): # minutes
                 self.day_routine.append(datetime(2024, 4, 4, h, m, 0, 0, tzinfo=ZoneInfo("America/Chicago")))
 
-    
+# st = SolarTracker()
+# st.setDateTime()
+# print(st.getAltitude())
+# print(st.getAzimuth())
