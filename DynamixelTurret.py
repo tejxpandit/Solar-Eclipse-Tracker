@@ -32,3 +32,7 @@ class DynamixelTurret:
             import msvcrt
             def getch():
                 return msvcrt.getch().decode()
+
+        
+        self.initController()
+        self.initServos()
