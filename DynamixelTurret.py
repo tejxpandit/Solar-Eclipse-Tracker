@@ -33,6 +33,14 @@ class DynamixelTurret:
             def getch():
                 return msvcrt.getch().decode()
 
-        
+        MY_DXL = 'X_SERIES'
+        if MY_DXL == 'X_SERIES' or MY_DXL == 'MX_SERIES':
+            self.ADDR_TORQUE_ENABLE          = 64
+            self.ADDR_GOAL_POSITION          = 116
+            self.ADDR_PRESENT_POSITION       = 132
+        self.TORQUE_ENABLE               = 1     # Value for enabling the torque
+        self.TORQUE_DISABLE              = 0     # Value for disabling the torque
+        self.DXL_MOVING_STATUS_THRESHOLD = 20    # Dynamixel moving status threshold
+
         self.initController()
         self.initServos()
