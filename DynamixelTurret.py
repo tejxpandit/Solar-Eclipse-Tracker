@@ -44,3 +44,11 @@ class DynamixelTurret:
 
         self.initController()
         self.initServos()
+
+    def initController(self):
+        try:
+            self.portHandler = PortHandler(self.DEVICENAME)
+            self.packetHandler = PacketHandler(self.PROTOCOL_VERSION)
+        except:
+            print("No Turret Detected on " + str(self.DEVICENAME))
+            exit(1)
