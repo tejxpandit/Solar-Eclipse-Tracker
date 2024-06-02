@@ -70,3 +70,8 @@ class DynamixelTurret:
                 print(self.packetHandler.getTxRxResult(dxl_comm_result), self.packetHandler.getRxPacketError(dxl_error))
         except:
             print("Failed to Connect Servo : " + name + ", ID : " + str(id))
+
+    def setServo(self, name, angle):
+        id = self.servos[name]["id"]
+        fine_angle = self.fineAngle(name, angle)
+        dxl_comm_result, dxl_error = self.packetHandler.write4ByteTxRx(self.portHandler, id, self.ADDR_GOAL_POSITION, int(fine_angle))
