@@ -52,3 +52,7 @@ class DynamixelTurret:
         except:
             print("No Turret Detected on " + str(self.DEVICENAME))
             exit(1)
+
+    def initServos(self):
+        for name, details in self.servos.items():
+            self.initServo(name)
