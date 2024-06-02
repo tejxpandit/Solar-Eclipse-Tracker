@@ -56,3 +56,17 @@ class DynamixelTurret:
     def initServos(self):
         for name, details in self.servos.items():
             self.initServo(name)
+
+    def initServo(self, name):
+        id = self.servos[name]["id"]
+        try:
+            self.portHandler.openPort()
+            self.portHandler.setBaudRate(self.BAUDRATE)
+            # Enable Dynamixel Torque
+            dxl_comm_result, dxl_error = self.packetHandler.write1ByteTxRx(self.portHandler, id, self.ADDR_TORQUE_ENABLE, self.TORQUE_ENABLE)
+            if dxl_comm_result == COMM_SUCCESS:
+                print("Connected to Dynamixel Servo : " + name + ", ID : " + str(id))
+            else:
+                print(self.packetHandler.getTxRxResult(dxl_comm_result), self.packetHandler.getRxPacketError(dxl_error))
+        except:
+            print("Failed to Connect Servo : " + name + ", ID : " + str(id))
