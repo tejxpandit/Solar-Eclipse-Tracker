@@ -71,6 +71,11 @@ class DynamixelTurret:
         except:
             print("Failed to Connect Servo : " + name + ", ID : " + str(id))
 
+    def fineAngle(self, name, angle):
+        fine_angle = (angle / self.servo_angle_max_degree) * self.servo_angle_max_dynamix
+        fine_angle = self.safeAngle(name, fine_angle)
+        return fine_angle
+
     def setServo(self, name, angle):
         id = self.servos[name]["id"]
         fine_angle = self.fineAngle(name, angle)
