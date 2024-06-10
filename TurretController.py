@@ -24,3 +24,9 @@ class TurretController:
         self.rotate_error_correction = 0
         self.tilt_error_correction = 0
 
+    def createTurretControllerWindow(self):
+        dpg.add_window(label="Turret Controls", tag="turret_control_window")
+        dpg.add_button(label="Start Tracker", parent="turret_control_window", tag="start_tracking_button", callback=self.startTracker)
+        dpg.add_button(label="Stop Tracker", parent="turret_control_window", tag="stop_tracking_button", show=False, callback=self.stopTracker) 
+        dpg.bind_item_theme("start_tracking_button", self.theme.enableGreen())
+        dpg.bind_item_theme("stop_tracking_button", self.theme.disableRed())
