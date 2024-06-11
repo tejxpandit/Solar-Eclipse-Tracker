@@ -35,3 +35,9 @@ class TurretController:
         dpg.add_text("Error Correction", parent="turret_control_window")
         dpg.add_slider_float(label="Rotate Error", parent="turret_control_window", tag="rotate_error_slider", min_value=-20, max_value=+20, default_value=0, callback=None)
         dpg.add_slider_float(label="Tilt Error", parent="turret_control_window", tag="tilt_error_slider", min_value=-20, max_value=+20, default_value=0, callback=None)
+
+        # Fine Error Correction Controls
+        dpg.add_text("Error Finetuning", parent="turret_control_window")
+        dpg.add_slider_float(label="Rotate Error Fine", parent="turret_control_window", tag="rotate_error_fine_slider", min_value=-2, max_value=+2, default_value=0, callback=None)
+        dpg.add_slider_float(label="Tilt Error Fine", parent="turret_control_window", tag="tilt_error_fine_slider", min_value=-2, max_value=+2, default_value=0, callback=None)
+
