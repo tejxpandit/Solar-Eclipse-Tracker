@@ -30,3 +30,8 @@ class TurretController:
         dpg.add_button(label="Stop Tracker", parent="turret_control_window", tag="stop_tracking_button", show=False, callback=self.stopTracker) 
         dpg.bind_item_theme("start_tracking_button", self.theme.enableGreen())
         dpg.bind_item_theme("stop_tracking_button", self.theme.disableRed())
+
+        # Error Correction Controls
+        dpg.add_text("Error Correction", parent="turret_control_window")
+        dpg.add_slider_float(label="Rotate Error", parent="turret_control_window", tag="rotate_error_slider", min_value=-20, max_value=+20, default_value=0, callback=None)
+        dpg.add_slider_float(label="Tilt Error", parent="turret_control_window", tag="tilt_error_slider", min_value=-20, max_value=+20, default_value=0, callback=None)
