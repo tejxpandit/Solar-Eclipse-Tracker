@@ -41,3 +41,11 @@ class TurretController:
         dpg.add_slider_float(label="Rotate Error Fine", parent="turret_control_window", tag="rotate_error_fine_slider", min_value=-2, max_value=+2, default_value=0, callback=None)
         dpg.add_slider_float(label="Tilt Error Fine", parent="turret_control_window", tag="tilt_error_fine_slider", min_value=-2, max_value=+2, default_value=0, callback=None)
 
+        # TEST : Manual Callibration Controls
+        # dpg.add_slider_int(label="Rotate", parent="turret_control_window", tag="rotate_slider", min_value=0, max_value=360, default_value=180, callback=None)
+        # dpg.add_slider_int(label="Tilt", parent="turret_control_window", tag="tilt_slider", min_value=0, max_value=360, default_value=90, callback=None)
+
+        # TEST : Solar Daily Routine
+        dpg.add_button(label="Day Routine", parent="turret_control_window", tag="day_routine_button", callback=self.solarTrackerRoutine)
+
+    
