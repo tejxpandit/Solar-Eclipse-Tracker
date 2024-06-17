@@ -58,4 +58,12 @@ class TurretController:
         azimuth = azimuth + self.rotate_error_correction
         return azimuth
     
-    
+    def altitudeCorrection(self, altitude):
+        # Preset Orientation Rotation is Set
+        altitude = altitude
+        # Add Callibration Offset
+        altitude = altitude + self.tilt_offset
+        # Manual Error Correction
+        self.tilt_error_correction = dpg.get_value("tilt_error_slider") + dpg.get_value("tilt_error_fine_slider")
+        altitude = altitude + self.tilt_error_correction
+        return altitude
