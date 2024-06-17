@@ -48,4 +48,14 @@ class TurretController:
         # TEST : Solar Daily Routine
         dpg.add_button(label="Day Routine", parent="turret_control_window", tag="day_routine_button", callback=self.solarTrackerRoutine)
 
+    def azimuthCorrection(self, azimuth):
+        # Invert Rotatation due to preferred Preset Orientation
+        azimuth = 360 - azimuth
+        # Add Callibration Offset
+        azimuth = azimuth + self.rotate_offset
+        # Manual Error Correction
+        self.rotate_error_correction = dpg.get_value("rotate_error_slider") + dpg.get_value("rotate_error_fine_slider")
+        azimuth = azimuth + self.rotate_error_correction
+        return azimuth
+    
     
