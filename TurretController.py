@@ -78,3 +78,13 @@ class TurretController:
             self.dmx.setServo("rotate", self.azimuthCorrection(azimuth))
             self.dmx.setServo("tilt", self.altitudeCorrection(altitude))
             
+            # CALLIBRATION
+            # rotate = dpg.get_value("rotate_slider")
+            # tilt = dpg.get_value("tilt_slider")
+            # print("Rotate : " + str(rotate) + ", Tilt : " + str(tilt))
+            # self.dmx.setServo("rotate", rotate)
+            # self.dmx.setServo("tilt", tilt)
+
+            time.sleep(2)
+
+    
