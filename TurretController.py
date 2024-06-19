@@ -67,3 +67,11 @@ class TurretController:
         self.tilt_error_correction = dpg.get_value("tilt_error_slider") + dpg.get_value("tilt_error_fine_slider")
         altitude = altitude + self.tilt_error_correction
         return altitude
+
+    def turretTracker(self):
+        while self.turretState:
+            # SOLAR TRACKING
+            self.tracker.setDateTime()
+            altitude = self.tracker.getAltitude()
+            azimuth = self.tracker.getAzimuth()
+            
