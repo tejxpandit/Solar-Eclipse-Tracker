@@ -74,4 +74,7 @@ class TurretController:
             self.tracker.setDateTime()
             altitude = self.tracker.getAltitude()
             azimuth = self.tracker.getAzimuth()
+            print("Altitude : " + str(altitude) + ", Azimuth : " + str(azimuth))
+            self.dmx.setServo("rotate", self.azimuthCorrection(azimuth))
+            self.dmx.setServo("tilt", self.altitudeCorrection(altitude))
             
