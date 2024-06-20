@@ -87,4 +87,12 @@ class TurretController:
 
             time.sleep(2)
 
+    def startTracker(self):
+        self.turretThread = threading.Thread(target = self.turretTracker)
+        self.turretState = True
+        dpg.hide_item("start_tracking_button")
+        dpg.show_item("stop_tracking_button")
+        print("Solar Tracker Enabled")
+        self.turretThread.start()
+
     
