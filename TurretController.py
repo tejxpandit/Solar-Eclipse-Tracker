@@ -102,4 +102,14 @@ class TurretController:
         print("Solar Tracker Disabled")
         self.turretThread.join()
 
+    # TEST : SOLAR ECLIPSE TURRET ROUTINE
+    def solarTrackerRoutine(self):
+        print("TEST : Starting Day Routine ---------")
+        self.tracker.generateDayRoutine()
 
+        for t in self.tracker.day_routine:
+            print(t)
+            self.tracker.date_time = t
+            altitude = self.tracker.getAltitude()
+            azimuth = self.tracker.getAzimuth()
+            print("Altitude : " + str(altitude) + ", Azimuth : " + str(azimuth))
