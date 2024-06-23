@@ -106,10 +106,16 @@ class TurretController:
     def solarTrackerRoutine(self):
         print("TEST : Starting Day Routine ---------")
         self.tracker.generateDayRoutine()
-
         for t in self.tracker.day_routine:
             print(t)
             self.tracker.date_time = t
             altitude = self.tracker.getAltitude()
             azimuth = self.tracker.getAzimuth()
             print("Altitude : " + str(altitude) + ", Azimuth : " + str(azimuth))
+            azimuth_corrected = self.azimuthCorrection(azimuth)
+            altitude_corrected = self.altitudeCorrection(altitude)
+            self.dmx.setServo("rotate", azimuth_corrected)
+            self.dmx.setServo("tilt", altitude_corrected)
+            time.sleep(0.1)
+        print("TEST : Day Routine Complete ---------")
+        
