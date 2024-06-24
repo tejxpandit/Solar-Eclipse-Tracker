@@ -24,3 +24,8 @@ class MobileBTController:
         dpg.add_button(label="Disconnect BT", parent="mobile_controller_window", tag="stop_bt_button", show=False, callback=self.stopBTCom) 
         dpg.bind_item_theme("start_bt_button", self.theme.enableGreen())
         dpg.bind_item_theme("stop_bt_button", self.theme.disableRed())
+
+        dpg.add_text("Capture Mode", parent="mobile_controller_window")
+        dpg.add_group(parent="mobile_controller_window", tag="capture_mode", horizontal=True)
+        dpg.add_button(label="Photo Mode", parent="capture_mode", user_data="photo_mode", callback=self.executeCommand)
+        dpg.add_button(label="Video Mode", parent="capture_mode", user_data="video_mode", callback=self.executeCommand)
