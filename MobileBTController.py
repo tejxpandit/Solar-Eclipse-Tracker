@@ -47,3 +47,8 @@ class MobileBTController:
         dpg.bind_item_theme("nav_controls_top", self.theme.navBlue())
         dpg.bind_item_theme("nav_controls_mid", self.theme.navBlue())
         dpg.bind_item_theme("nav_controls_bottom", self.theme.navBlue())
+
+        dpg.add_text("Zoom Controls", parent="mobile_controller_window")
+        dpg.add_group(parent="mobile_controller_window", tag="zoom_controls", horizontal=True)
+        dpg.add_button(label="Zoom +", parent="zoom_controls", user_data="zoom_in", callback=self.executeCommand)
+        dpg.add_button(label="Zoom -", parent="zoom_controls", user_data="zoom_out", callback=self.executeCommand)
