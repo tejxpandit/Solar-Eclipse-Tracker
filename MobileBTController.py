@@ -52,3 +52,19 @@ class MobileBTController:
         dpg.add_group(parent="mobile_controller_window", tag="zoom_controls", horizontal=True)
         dpg.add_button(label="Zoom +", parent="zoom_controls", user_data="zoom_in", callback=self.executeCommand)
         dpg.add_button(label="Zoom -", parent="zoom_controls", user_data="zoom_out", callback=self.executeCommand)
+
+        dpg.add_text("Zoom In Shortcuts", parent="mobile_controller_window")
+        dpg.add_group(parent="mobile_controller_window", tag="zoom_in_shortcuts", horizontal=True)
+        dpg.add_button(label="Zoom x1", parent="zoom_in_shortcuts", user_data="zoom_x1", callback=self.executeCommand)
+        dpg.add_button(label="Zoom x10", parent="zoom_in_shortcuts", user_data="zoom_x10", callback=self.executeCommand)
+        dpg.add_button(label="Zoom x50", parent="zoom_in_shortcuts", user_data="zoom_x50", callback=self.executeCommand)
+        dpg.add_button(label="Zoom x100", parent="zoom_in_shortcuts", user_data="zoom_x100", callback=self.executeCommand)
+
+        dpg.add_text("Zoom Out Shortcuts", parent="mobile_controller_window")
+        dpg.add_group(parent="mobile_controller_window", tag="zoom_out_shortcuts", horizontal=True)
+        dpg.add_button(label="Zoom -x1", parent="zoom_out_shortcuts", user_data="zoom_mx1", callback=self.executeCommand)
+        dpg.add_button(label="Zoom -x10", parent="zoom_out_shortcuts", user_data="zoom_mx10", callback=self.executeCommand)
+        dpg.add_button(label="Zoom -x50", parent="zoom_out_shortcuts", user_data="zoom_mx50", callback=self.executeCommand)
+        dpg.add_button(label="Zoom -x100", parent="zoom_out_shortcuts", user_data="zoom_mx100", callback=self.executeCommand)
+
+        
