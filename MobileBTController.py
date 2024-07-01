@@ -36,4 +36,14 @@ class MobileBTController:
         dpg.add_button(label="Back", parent="capture_controls", user_data="back", callback=self.executeCommand)
         dpg.bind_item_theme("capture_button", self.theme.captureGreen())
 
-        
+        dpg.add_text("Nav Controls", parent="mobile_controller_window")
+        dpg.add_group(parent="mobile_controller_window", tag="nav_controls_top", horizontal=True)
+        dpg.add_button(label="Up", parent="nav_controls_top", user_data="nav_up", indent=30, callback=self.executeCommand)
+        dpg.add_group(parent="mobile_controller_window", tag="nav_controls_mid", horizontal=True)
+        dpg.add_button(label="Left", parent="nav_controls_mid", user_data="nav_left", callback=self.executeCommand)
+        dpg.add_button(label="Right", parent="nav_controls_mid", user_data="nav_right", callback=self.executeCommand)
+        dpg.add_group(parent="mobile_controller_window", tag="nav_controls_bottom", horizontal=True)
+        dpg.add_button(label="Down", parent="nav_controls_bottom", user_data="nav_down", indent=20, callback=self.executeCommand)
+        dpg.bind_item_theme("nav_controls_top", self.theme.navBlue())
+        dpg.bind_item_theme("nav_controls_mid", self.theme.navBlue())
+        dpg.bind_item_theme("nav_controls_bottom", self.theme.navBlue())
