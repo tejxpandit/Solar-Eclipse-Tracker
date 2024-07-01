@@ -29,3 +29,11 @@ class MobileBTController:
         dpg.add_group(parent="mobile_controller_window", tag="capture_mode", horizontal=True)
         dpg.add_button(label="Photo Mode", parent="capture_mode", user_data="photo_mode", callback=self.executeCommand)
         dpg.add_button(label="Video Mode", parent="capture_mode", user_data="video_mode", callback=self.executeCommand)
+        
+        dpg.add_text("Capture Controls", parent="mobile_controller_window")
+        dpg.add_group(parent="mobile_controller_window", tag="capture_controls", horizontal=True)
+        dpg.add_button(label="Capture", parent="capture_controls", tag="capture_button", user_data="capture", width=100, callback=self.executeCommand)
+        dpg.add_button(label="Back", parent="capture_controls", user_data="back", callback=self.executeCommand)
+        dpg.bind_item_theme("capture_button", self.theme.captureGreen())
+
+        
