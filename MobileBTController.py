@@ -67,4 +67,8 @@ class MobileBTController:
         dpg.add_button(label="Zoom -x50", parent="zoom_out_shortcuts", user_data="zoom_mx50", callback=self.executeCommand)
         dpg.add_button(label="Zoom -x100", parent="zoom_out_shortcuts", user_data="zoom_mx100", callback=self.executeCommand)
 
-        
+        def startBTCom(self):
+        dpg.hide_item("start_bt_button")
+        dpg.show_item("stop_bt_button")
+        print("Connecting to BT")
+        self.connectBT()
