@@ -78,3 +78,15 @@ class MobileBTController:
         dpg.show_item("start_bt_button")
         print("Disconnecting from BT")
         self.disconnectBT()
+
+    # Bluetooth Connection and Transmission Functions
+    def connectBT(self):
+        try:
+            self.bt_com = serial.Serial(self.bt_com_port, self.bt_com_baud, timeout=self.bt_com_timeout)
+            print("BT Device Connected!")
+            self.bt_state = True
+            time.sleep(1)
+        except:
+            print("Unable to Connect to BT Device!")
+            self.bt_state = False
+            self.stopBTCom()
