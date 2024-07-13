@@ -91,6 +91,11 @@ class MobileBTController:
             self.bt_state = False
             self.stopBTCom()
 
-    # TODO : Add Disconnection Function
+    def disconnectBT(self):
+        if self.bt_state:
+            # serial.Serial.reset_output_buffer() # OPTIONAL BUFFER FLUSH
+            self.bt_com.close()
+            self.bt_state = False
+
     # TODO : Add Command Transmission Functions
     # TODO : Create all Commands for Mobile and Camera Controls
