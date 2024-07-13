@@ -97,5 +97,9 @@ class MobileBTController:
             self.bt_com.close()
             self.bt_state = False
 
-    # TODO : Add Command Transmission Functions
+    def sendCommandBT(self, command):
+        if self.bt_state:
+            # Write Command to Bluetooth COM Port
+            self.bt_com.write(bytes(command + "\n",'utf-8'))
+
     # TODO : Create all Commands for Mobile and Camera Controls
