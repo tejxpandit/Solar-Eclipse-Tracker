@@ -102,4 +102,25 @@ class MobileBTController:
             # Write Command to Bluetooth COM Port
             self.bt_com.write(bytes(command + "\n",'utf-8'))
 
-    # TODO : Create all Commands for Mobile and Camera Controls
+    ##### CONTROL PROTOCOLS #####
+
+    # PROTOCOL : Capture
+    def protocolCapture(self):
+        # self.sendCommandBT("reset")
+        self.sendCommandBT("capture")
+        print("Clicking!")
+
+    # PROTOCOL : Back
+    def protocolBack(self):
+        self.sendCommandBT("back")
+        print("Back/Escape!")
+    
+    # PROTOCOL : Photo Mode
+    def protocolPhotoMode(self):
+        self.sendCommandBT("modePhoto")
+        print("Switching to Photo Mode!")
+
+    # PROTOCOL : Video Mode
+    def protocolVideoMode(self):
+        self.sendCommandBT("modeVideo")
+        print("Switching to Video Mode!")
