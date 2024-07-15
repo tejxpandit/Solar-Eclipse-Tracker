@@ -140,3 +140,54 @@ class MobileBTController:
     # PROTOCOL : Nav Arrow Left
     def protocolNavLeft(self):
         self.sendCommandBT("left")
+
+    # PROTOCOL : Zoom In +
+    def protocolZoomIn(self):
+        self.sendCommandBT("+")
+        print("Zooming In!")
+
+    # PROTOCOL : Zoom Out -
+    def protocolZoomOut(self):
+        self.sendCommandBT("-")
+        print("Zooming Out!")
+
+    # PROTOCOL : Zoom x1
+    def protocolZoomX1(self):
+        self.sendCommandBT("zoomX1")
+        print("Zoom x1!")
+
+    # PROTOCOL : Zoom x10
+    def protocolZoomX10(self):
+        self.sendCommandBT("zoomX10")
+        print("Zoom x10!")
+
+    # PROTOCOL : Zoom x50
+    def protocolZoomX50(self):
+        self.sendCommandBT("zoomX50")
+        print("Zoom x50!")
+
+    # PROTOCOL : Zoom x100
+    def protocolZoomX100(self):
+        self.sendCommandBT("zoomX100")
+        print("Zoom x100!")
+
+    # PROTOCOL : Zoom -x1
+    def protocolZoomMX1(self):
+        self.sendCommandBT("zoomMX1")
+        print("Zoom -x1!")
+
+    # PROTOCOL : Zoom -x10
+    def protocolZoomMX10(self):
+        self.sendCommandBT("zoomMX10")
+        print("Zoom -x10!")
+
+    # PROTOCOL : Zoom -x50
+    def protocolZoomMX50(self):
+        self.sendCommandBT("zoomMX50")
+        print("Zoom -x50!")
+
+    # PROTOCOL : Zoom -x100
+    def protocolZoomMX100(self):
+        self.sendCommandBT("zoomMX100")
+        print("Zoom -x100!")
+    
