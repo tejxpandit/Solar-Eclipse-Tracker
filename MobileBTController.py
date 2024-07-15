@@ -124,3 +124,19 @@ class MobileBTController:
     def protocolVideoMode(self):
         self.sendCommandBT("modeVideo")
         print("Switching to Video Mode!")
+
+    # PROTOCOL : Nav Arrow Up
+    def protocolNavUp(self):
+        self.sendCommandBT("up")
+
+    # PROTOCOL : Nav Arrow Down
+    def protocolNavDown(self):
+        self.sendCommandBT("down")
+
+    # PROTOCOL : Nav Arrow Right
+    def protocolNavRight(self):
+        self.sendCommandBT("right")
+
+    # PROTOCOL : Nav Arrow Left
+    def protocolNavLeft(self):
+        self.sendCommandBT("left")
