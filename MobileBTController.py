@@ -203,3 +203,14 @@ class MobileBTController:
             self.protocolPhotoMode()
         elif command=="video_mode":
             self.protocolVideoMode()
+
+        elif command=="nav_up":
+            self.protocolNavUp()
+        elif command=="nav_down":
+            self.protocolNavDown()
+        elif command=="nav_right":
+            self.protocolNavRight()
+        elif command=="nav_left":
+            self.protocolNavLeft()
+
+        
