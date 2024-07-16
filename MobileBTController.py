@@ -191,3 +191,15 @@ class MobileBTController:
         self.sendCommandBT("zoomMX100")
         print("Zoom -x100!")
     
+    # Command Execution Unit
+    def executeCommand(self, sender, data, command):
+        # print(command)
+        if command=="capture":
+            self.protocolCapture()
+        elif command=="back":
+            self.protocolBack()
+
+        elif command=="photo_mode":
+            self.protocolPhotoMode()
+        elif command=="video_mode":
+            self.protocolVideoMode()
