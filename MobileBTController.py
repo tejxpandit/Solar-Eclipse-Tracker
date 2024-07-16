@@ -226,3 +226,13 @@ class MobileBTController:
             self.protocolZoomX50()
         elif command=="zoom_x100":
             self.protocolZoomX100()
+
+        elif command=="zoom_mx1":
+            self.protocolZoomMX1()
+        elif command=="zoom_mx10":
+            self.protocolZoomMX10() 
+        elif command=="zoom_mx50":
+            self.protocolZoomMX50()
+        elif command=="zoom_mx100":
+            self.protocolZoomMX100()
+            
