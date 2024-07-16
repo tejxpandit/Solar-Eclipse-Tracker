@@ -213,4 +213,7 @@ class MobileBTController:
         elif command=="nav_left":
             self.protocolNavLeft()
 
-        
+        elif command=="zoom_in":
+            self.protocolZoomIn()
+        elif command=="zoom_out":
+            self.protocolZoomOut()
