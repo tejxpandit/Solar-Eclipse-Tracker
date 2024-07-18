@@ -30,3 +30,11 @@ class StreamViewer:
         self.viewer_thread = None
         self.theme = SolarTrackerThemes()
 
+    # Stream Viewer GUI Controls
+    def createStreamViewWindow(self):
+        dpg.add_window(label="Solar Eclipse Video Stream", tag="stream_viewer_window")
+        dpg.add_button(label="Start Stream", parent="stream_viewer_window", tag="start_stream_button", callback=self.startStream)
+        dpg.add_button(label="Stop Stream", parent="stream_viewer_window", tag="stop_stream_button", show=False, callback=self.stopStream) 
+        dpg.bind_item_theme("start_stream_button", self.theme.enableGreen())
+        dpg.bind_item_theme("stop_stream_button", self.theme.disableRed())
+
