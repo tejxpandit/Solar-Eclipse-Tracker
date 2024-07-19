@@ -38,3 +38,10 @@ class StreamViewer:
         dpg.bind_item_theme("start_stream_button", self.theme.enableGreen())
         dpg.bind_item_theme("stop_stream_button", self.theme.disableRed())
 
+    def startStream(self):
+        self.viewer_thread = threading.Thread(target = self.viewerThread)
+        self.stream_state = True
+        dpg.hide_item("start_stream_button")
+        dpg.show_item("stop_stream_button")
+        print("Stream Enabled")
+        self.viewer_thread.start()
