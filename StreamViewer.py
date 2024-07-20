@@ -62,3 +62,24 @@ class StreamViewer:
         frame_data = np.asarray(frame_data, dtype='f') # Change Data Type to float32
         tex_data = np.true_divide(frame_data, 255.0) # Normalize Texture Data
         self.stream_config["data"] = tex_data
+
+        # print("Frame Array:")
+        # print("Array is of type: ", type(frame))
+        # print("No. of dimensions: ", frame.ndim)
+        # print("Shape of array: ", frame.shape)
+        # print("Size of array: ", frame.size)
+        # print("Array stores elements of type: ", frame.dtype)
+
+        # self.stream_config["width"] = frame.shape[1]
+        # self.stream_config["height"] = frame.shape[0]
+        # self.stream_config["channels"] = frame.shape[2]
+
+        # print(self.stream_config["width"])
+        # print(self.stream_config["height"])
+        # print(self.stream_config["channels"])
+        # print(len(self.stream_config["data"]))
+
+        # frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+        # cv2.imshow("Solar Tracker Frame", frame_rgb)
+        # cv2.imwrite(self.frame_file, frame)
+        # print("stream data captured")
