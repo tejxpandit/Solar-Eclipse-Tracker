@@ -45,3 +45,10 @@ class StreamViewer:
         dpg.show_item("stop_stream_button")
         print("Stream Enabled")
         self.viewer_thread.start()
+
+    def stopStream(self):
+        self.stream_state = False
+        dpg.hide_item("stop_stream_button")
+        dpg.show_item("start_stream_button")
+        print("Stream Disabled")
+        self.viewer_thread.join()
