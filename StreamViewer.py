@@ -52,3 +52,13 @@ class StreamViewer:
         dpg.show_item("start_stream_button")
         print("Stream Disabled")
         self.viewer_thread.join()
+
+    # Stream Capture
+    def streamCapture(self):
+        # check, stream_frame = self.stream.read()
+        frame = cv2.resize(self.stream_frame,(800,373))
+        frame_data = np.flip(frame, 2) # Convert BGR to RGB
+        frame_data = frame_data.ravel() # Flatten N-Dim to 1-Dim Structure
+        frame_data = np.asarray(frame_data, dtype='f') # Change Data Type to float32
+        tex_data = np.true_divide(frame_data, 255.0) # Normalize Texture Data
+        self.stream_config["data"] = tex_data
