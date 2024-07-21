@@ -92,3 +92,16 @@ class StreamViewer:
             except:
                 print("Failed to Capture Stream @ " + self.streamURL)
             time.sleep(0.01)
+
+    # Viewer Thread
+    def viewerThread(self):
+        self.stream = cv2.VideoCapture(self.streamURL)
+        self.stream_thread = threading.Thread(target = self.streamThread)
+        self.stream_thread.start()
+        time.sleep(2)
+        while self.stream_state:
+            self.streamCapture()
+            self.updateFrame()
+            time.sleep(0.2)
+        self.stream_thread.join()
+        self.stream.release()
