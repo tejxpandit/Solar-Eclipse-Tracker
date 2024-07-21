@@ -83,3 +83,12 @@ class StreamViewer:
         # cv2.imshow("Solar Tracker Frame", frame_rgb)
         # cv2.imwrite(self.frame_file, frame)
         # print("stream data captured")
+
+    # Stream Thread
+    def streamThread(self):
+        while self.stream_state:
+            try:
+                check, self.stream_frame = self.stream.read()
+            except:
+                print("Failed to Capture Stream @ " + self.streamURL)
+            time.sleep(0.01)
