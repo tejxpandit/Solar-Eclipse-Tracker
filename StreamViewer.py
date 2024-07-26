@@ -112,3 +112,8 @@ class StreamViewer:
         # Update Image
         dpg.set_value("stream_tex", self.stream_config["data"])
         # print("frame updated")
+
+    def initializeStreamFrame(self):
+        # Set Initial Stream Frame
+        dpg.add_image(texture_tag="stream_tex", parent="stream_viewer_window", tag="stream_frame", width=self.stream_config["width"]*self.stream_config["scale"], height=self.stream_config["height"]*self.stream_config["scale"])
+        
