@@ -105,3 +105,10 @@ class StreamViewer:
             time.sleep(0.2)
         self.stream_thread.join()
         self.stream.release()
+
+    def updateFrame(self):
+        # Load New Image (width and height should match!)
+        # self.stream_config["width"], self.stream_config["height"], self.stream_config["channels"], self.stream_config["data"] = dpg.load_image(self.frame_file)
+        # Update Image
+        dpg.set_value("stream_tex", self.stream_config["data"])
+        # print("frame updated")
