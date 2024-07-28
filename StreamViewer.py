@@ -113,6 +113,15 @@ class StreamViewer:
         dpg.set_value("stream_tex", self.stream_config["data"])
         # print("frame updated")
 
+    # Frame Image Management
+    def initializeStreamTexture(self):
+        # Load Image File
+        self.stream_config["width"], self.stream_config["height"], self.stream_config["channels"], self.stream_config["data"] = dpg.load_image("StreamFrame.jpg")
+        # Create Texture Registry
+        dpg.add_texture_registry(tag="stream_tex_reg", show=False)
+        # Add Image Texture to Registry
+        dpg.add_raw_texture(width=self.stream_config["width"], height=self.stream_config["height"], default_value=self.stream_config["data"], format=dpg.mvFormat_Float_rgb, parent="stream_tex_reg", tag="stream_tex")
+
     def initializeStreamFrame(self):
         # Set Initial Stream Frame
         dpg.add_image(texture_tag="stream_tex", parent="stream_viewer_window", tag="stream_frame", width=self.stream_config["width"]*self.stream_config["scale"], height=self.stream_config["height"]*self.stream_config["scale"])
