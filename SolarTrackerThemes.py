@@ -16,3 +16,10 @@ class SolarTrackerThemes:
                 dpg.add_theme_color(dpg.mvThemeCol_ButtonActive,    (84, 159, 235, 200))
         return theme
     
+    def captureGreen(self):
+        with dpg.theme() as theme:
+            with dpg.theme_component(0):
+                dpg.add_theme_color(dpg.mvThemeCol_Button, 			(19, 79, 43, 255))
+                dpg.add_theme_color(dpg.mvThemeCol_ButtonHovered,   (10, 46, 25, 255))
+                dpg.add_theme_color(dpg.mvThemeCol_ButtonActive,    (10, 46, 25, 200))
+        return theme
