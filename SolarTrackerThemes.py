@@ -1,6 +1,6 @@
 # File : Solar Tracker App Themes
 # Author : Tej Pandit
-# Date : July 2024
+# Date : August 2024
 
 import dearpygui.dearpygui as dpg
 
@@ -30,4 +30,12 @@ class SolarTrackerThemes:
                 dpg.add_theme_color(dpg.mvThemeCol_Button, 			(82, 167, 27, 255))
                 dpg.add_theme_color(dpg.mvThemeCol_ButtonHovered,   (48, 99, 15, 255))
                 dpg.add_theme_color(dpg.mvThemeCol_ButtonActive,    (48, 99, 15, 200))
+        return theme
+
+    def disableRed(self):
+        with dpg.theme() as theme:
+            with dpg.theme_component(0):
+                dpg.add_theme_color(dpg.mvThemeCol_Button, 			(167, 55, 27, 255))
+                dpg.add_theme_color(dpg.mvThemeCol_ButtonHovered,   (84, 27, 13, 255))
+                dpg.add_theme_color(dpg.mvThemeCol_ButtonActive,    (84, 27, 13, 200))
         return theme
